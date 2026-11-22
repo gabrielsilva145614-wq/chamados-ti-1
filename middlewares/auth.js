@@ -34,7 +34,19 @@ function csrf(req, res, next) {
   next();
 }
 function requireRoles(...roles) {
-  return (req, res, next) => roles.includes(req.currentUser.perfil) ? next() : res.status(403).render('error', { title: 'Acesso negado', error: { message: 'Seu perfil não tem permissão para esta ação.' } });
+  return (req, res, next) => {
+    if (roles.includes(req.currentUser.perfil)) {
+      return next();
+    }
+
+    return res.status(403).render('error', {
+      title: 'Acesso negado',
+      error: {
+        status: 403,
+        message: 'Seu perfil não tem permissão para esta ação.'
+      }
+    });
+  };
 }
 function setSessionCookie(res, session) {
   res.cookie(cookieName, session, { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'lax', path: '/', maxAge: 5 * 864e5 });
