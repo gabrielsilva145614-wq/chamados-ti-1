@@ -1,0 +1,11 @@
+node_modules/
+.env
+.env.*
+!.env.example
+serviceAccountKey.json
+*.service-account.json
+*.sqlite
+*.sqlite3
+database.sqlite
+.DS_Store
+npm-debug.log*

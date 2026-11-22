@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acesso · HelpDesk TI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script id="firebase-web-config" type="application/json"><%- firebaseConfigJson %></script>
+</head>
+<body class="auth-page">
+  <div class="bg-glow" aria-hidden="true"></div>
+  <main class="auth-shell">
+    <div class="auth-heading">
+      <div class="brand-logo"><%- icon('zap', 24) %></div>
+      <h1>HelpDesk <span>TI</span></h1>
+      <p>Seu suporte começa aqui. Acesse ou crie sua conta.</p>
+    </div>
+    <section class="card auth-card" aria-label="Autenticação">
+      <div class="auth-tabs" role="group" aria-label="Acesso à conta">
+        <button id="tab-login" type="button" class="auth-tab is-active" aria-pressed="true">Entrar</button>
+        <button id="tab-register" type="button" class="auth-tab" aria-pressed="false">Criar conta</button>
+      </div>
+      <div id="auth-message" class="auth-message" role="alert" aria-live="polite" hidden></div>
+      <form id="auth-form">
+        <div class="field" id="name-field" hidden>
+          <label for="auth-name">Nome completo</label>
+          <input id="auth-name" name="nome" type="text" autocomplete="name" maxlength="100" placeholder="Ex.: Maria Souza">
+        </div>
+        <div class="field">
+          <label for="auth-email">E-mail</label>
+          <input id="auth-email" name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com" required>
+        </div>
+        <div class="field">
+          <label for="auth-password">Senha</label>
+          <input id="auth-password" name="senha" type="password" autocomplete="current-password" minlength="6" placeholder="Mínimo de 6 caracteres" required>
+        </div>
+        <button type="submit" id="auth-submit" class="btn btn-primary btn-block">Entrar com e-mail</button>
+      </form>
+      <div class="auth-divider">ou continue com</div>
+      <button type="button" id="google-login" class="btn btn-secondary btn-block"><span class="google-g" aria-hidden="true">G</span> Entrar com Google</button>
+      <p class="auth-hint">Novas contas recebem o perfil <strong>user</strong> automaticamente. O administrador controla as permissões.</p>
+    </section>
+  </main>
+  <script type="module" src="/js/login.js"></script>
+</body>
+</html>

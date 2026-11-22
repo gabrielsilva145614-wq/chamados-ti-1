@@ -1,0 +1,11 @@
+<%- include('partials/header') %>
+<header class="page-header"><div><p class="eyebrow">Acesso exclusivo do administrador</p><h1>Gestão de usuários</h1><p class="subtitle">Promova ou altere o perfil dos usuários cadastrados.</p></div></header>
+<section class="card card-flush"><div class="table-wrap"><table class="table">
+  <thead><tr><th>Usuário</th><th>E-mail</th><th>Perfil atual</th><th>Alterar perfil</th></tr></thead>
+  <tbody>
+  <% usuarios.forEach(u => { %>
+    <tr><td><strong><%= u.nome %></strong><% if (u.uid === currentUser.uid) { %> <span class="badge badge-purple">Você</span><% } %></td><td class="muted"><%= u.email %></td><td><span class="badge badge-<%= u.perfil === 'admin' ? 'red' : u.perfil === 'tecnico' ? 'amber' : 'blue' %>"><%= u.perfil %></span></td><td><form method="post" action="/usuarios/<%= encodeURIComponent(u.uid) %>/perfil" class="user-role-form"><input type="hidden" name="_csrf" value="<%= csrfToken %>"><select name="perfil" aria-label="Perfil de <%= u.nome %>"><% ['user', 'tecnico', 'admin'].forEach(role => { %><option value="<%= role %>" <%= role === u.perfil ? 'selected' : '' %>><%= role %></option><% }) %></select><button class="btn btn-secondary" type="submit">Salvar</button></form></td></tr>
+  <% }) %>
+  </tbody></table></div>
+</section>
+<%- include('partials/footer') %>
