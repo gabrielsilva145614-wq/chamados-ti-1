@@ -2,17 +2,17 @@
 
 **Aluno:** Gabriel Nery da Silva
 
-**Aplicação no Render:** `PREENCHER_APOS_DEPLOY: https://SEU-SERVICO.onrender.com`
+**Aplicação no Render:** https://chamados-ti-1-1.onrender.com
 
-**Repositório de entrega:** `PREENCHER: https://github.com/SEU-USUARIO/chamados-ti`
+**Repositório de entrega:** `https://github.com/gabrielsilva145614-wq/chamados-ti-1`
 
 **Credenciais de teste (crie-as no Firebase antes de entregar):**
 
 | Papel | E-mail de teste | Senha |
 | --- | --- | --- |
-| `user` | `PREENCHER_EMAIL_USER` | Forneça ao avaliador por meio seguro |
-| `tecnico` | `PREENCHER_EMAIL_TECNICO` | Forneça ao avaliador por meio seguro |
-| `admin` | `PREENCHER_EMAIL_ADMIN` | Forneça ao avaliador por meio seguro |
+| `user` | `nery@gmail.com` | Fornecida ao professor em particular |
+| `tecnico` | `tecnico@gmail.com` | Fornecida ao professor em particular |
+| `admin` | `gabriel1@gmail.com` | Fornecida ao professor em particular |
 
 > Nunca inclua senhas reais nem o JSON da chave de serviço no GitHub. Complete os dados acima ao criar as contas e finalizar o deploy.
 
